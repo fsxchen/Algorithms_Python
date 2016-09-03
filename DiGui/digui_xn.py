@@ -1,7 +1,21 @@
 #!/usr/bin/env python
+# -*- coding:utf-8 -*- 
+'''
+File Name: digui_xn.py
+Description: 
+Created_Time: 2016-09-03 17:17:04
+Last modified: 2016-09-03 17时21分01秒
+'''
+_author = 'arron'
+_email = 'fsxchen@gmail.com'
 import time
 
-def zhishu1(x, n):
+"""
+求x^n的结果.
+
+"""
+
+def chengji(x, n):
     res = 1
     if n == 0:
         return 1
@@ -12,21 +26,21 @@ def zhishu1(x, n):
 def isJs(n):
     return n%2
 
-def zhishu_dg(x, n):
+def chengji_dg(x, n):
     if n == 0:
         return 1
     elif isJs(n):
-        return x * zhishu_dg(x, (n-1)/2) * zhishu_dg(x, (n-1)/2)
+        return x * chengji_dg(x, (n-1)/2) * chengji_dg(x, (n-1)/2)
     else:
-        return zhishu_dg(x, n/2) * zhishu_dg(x, n/2)
+        return chengji_dg(x, n/2) * chengji_dg(x, n/2)
 
 start = time.time()
-zhishu1(2, 100000)
+chengji(2, 100000)
 end = time.time()
 print end-start
 
 
 start = time.time()
-zhishu_dg(2, 1000000)
+chengji_dg(2, 100000)
 end = time.time()
 print end-start
