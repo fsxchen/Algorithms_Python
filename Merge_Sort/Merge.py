@@ -1,5 +1,10 @@
 #!/usr/bin/python
 #coding:utf-8
+
+"""
+归并排序
+"""
+
 def megre_sort(A, p, r): 
     if p < r:
         q = (p + r) // 2
