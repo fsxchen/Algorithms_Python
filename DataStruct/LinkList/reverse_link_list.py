@@ -48,7 +48,6 @@ class LinkList(object):
         # frist move pointer, then reverse
         cur = self.head
         pre = None
-        nest = None
 
         if not cur:
             return
