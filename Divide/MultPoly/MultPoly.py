@@ -2,7 +2,7 @@
 @Author: yangxingchen
 @Date: 2020-04-07 11:37:46
 @LastEditors: yangxingchen
-@LastEditTime: 2020-04-07 12:22:53
+@LastEditTime: 2020-04-08 19:08:24
 @Description: 
 '''
 """多项式乘法
@@ -18,6 +18,12 @@ def mult_poly(A, B, n):
         for j in range(0, n):
             C[i + j] += A[i] * B[j]
     return C
+
+def mult_poly2(A, B, n, a1, b1):
+    r = []
+    if n = 1:
+        r.append(A[a1]* B[b1])
+    return r
 
 if __name__ == "__main__":
     A = [3, 2, 5]
