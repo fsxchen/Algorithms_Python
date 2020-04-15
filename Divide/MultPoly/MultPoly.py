@@ -2,7 +2,7 @@
 @Author: yangxingchen
 @Date: 2020-04-07 11:37:46
 @LastEditors: yangxingchen
-@LastEditTime: 2020-04-08 19:08:24
+@LastEditTime: 2020-04-14 10:57:17
 @Description: 
 '''
 """多项式乘法
@@ -28,4 +28,5 @@ def mult_poly2(A, B, n, a1, b1):
 if __name__ == "__main__":
     A = [3, 2, 5]
     B = [5, 1, 2]
+    
     print(mult_poly(A, B, 3))
