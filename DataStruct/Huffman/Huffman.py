@@ -1,10 +1,3 @@
-'''
-@Author: yangxingchen
-@Date: 2020-04-02 16:29:18
-@LastEditors: yangxingchen
-@LastEditTime: 2020-04-02 19:47:36
-@Description: 
-'''
 """霍夫曼编码
 """
 
