@@ -28,8 +28,26 @@ class LinkList(object):
         """
         t_p = self.head
         while t_p != None:
-            print(t_p.value,)
+            print(t_p.value, end='|')
             t_p = t_p.next
+        print()
+
+    def reverse2(self):
+        """
+        更精简的reverse，不需要cur指针，使用head代替就行了。
+        """
+        if not self.head:
+            return
+        
+        pre = None                  
+        next = self.head.next       # 保存next指针
+
+        while next:
+            next = self.head.next
+            self.head.next = pre
+            pre = self.head
+            if next:
+                self.head = next
 
     def reverse(self):
         """只要能保证在每次循环的时候
@@ -67,6 +85,6 @@ if __name__ == "__main__":
     for i in range(9):
         ll.add(Node(i))
     ll.p()
-    ll.reverse()
+    ll.reverse2()
     print("reverse")
     ll.p()
