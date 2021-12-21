@@ -1,6 +1,10 @@
 #!/usr/bin/python
 #coding:utf-8
 
+"""
+堆和堆排序
+"""
+
 def PARRENT(i):
     return int(i/2)
 
