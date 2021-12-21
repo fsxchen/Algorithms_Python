@@ -11,7 +11,7 @@ _email = 'fsxchen@gmail.com'
 import time
 
 """
-求x^n的结果.
+一些基础的递归算法实现
 
 """
 
@@ -34,13 +34,32 @@ def chengji_dg(x, n):
     else:
         return chengji_dg(x, n/2) * chengji_dg(x, n/2)
 
-start = time.time()
-chengji(2, 100000)
-end = time.time()
-print(end-start)
+
+def get_max(A, l, r):
+    if l == r:
+        return A[l]
+    else:
+        mid = l + ((r - l)>> 1)
+
+        l_max = get_max(A, l, mid)
+        r_max = get_max(A, mid+1, r)
+        return max(l_max, r_max)
+
+def find_max(A: list):
+    n = len(A)
+    return get_max(A, 0, n-1)
+
+# start = time.time()
+# chengji(2, 100000)
+# end = time.time()
+# print(end-start)
 
 
-start = time.time()
-chengji_dg(2, 100000)
-end = time.time()
-print(end-start)
+# start = time.time()
+# chengji_dg(2, 100000)
+# end = time.time()
+# print(end-start)
+
+if __name__ == "__main__":
+    A = [1, 2, 88, 3, 5, 12, 3, 4, 55, 9]
+    print(find_max(A))
