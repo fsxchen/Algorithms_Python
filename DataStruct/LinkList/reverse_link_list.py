@@ -61,6 +61,24 @@ class LinkList(object):
         cur.next = pre
         self.head = cur 
 
+    def remove_num(self, num: int):
+        """
+        删除一个指定的数
+        """
+        while self.head != num:
+            while self.head.value != num:
+                break
+            self.head = self.head.next
+
+        pre = self.head
+        cur = self.head
+
+        while cur != Node:
+            if (cur.value == num):
+                pre.next = cur.next
+            else:
+                pre = cur
+
 
 if __name__ == "__main__":
     ll = LinkList()
