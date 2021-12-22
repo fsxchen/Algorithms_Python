@@ -9,7 +9,7 @@ def QUICKSORT(A, p, r):
 
 def PARTITION(A, p, r):
     x = A[r]
-    i = p - 1
+    i = p - 1        # i其实就是<=区域的边界
     for j in range(p, r):
         if A[j] <= x:
             i += 1
