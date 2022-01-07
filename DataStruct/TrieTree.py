@@ -1,3 +1,10 @@
+'''
+Author: yangxingchen
+Date: 2021-12-27 11:33:02
+LastEditors: yangxingchen
+LastEditTime: 2021-12-27 14:38:35
+Description: 
+'''
 class Node1:
     def __init__(self):
         self.pas = 0
@@ -58,6 +65,14 @@ class Trie1:
                 return
             node = node.nexts[path]
         node.end -= 1
+
+
+class Node2:
+    def __init__(self):
+        self.pas = 0
+        self.end = 0
+        self.nexts = {}
+
 
 if __name__ == "__main__":
     t = Trie1()
