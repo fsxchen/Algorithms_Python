@@ -1,7 +1,7 @@
 #coding: utf-8
 
 """
-单链表
+single link List
 """
 
 class Node(object):
@@ -10,30 +10,35 @@ class Node(object):
         self.next = None
 
 class SingleLinkList:
-    head = None
-    def add(self, Node):
+    def __init__(self) -> None:
+        self.head = None
+
+    def build(self, value):
         if self.head == None:
-            self.head = Node
+            self.head = Node(value)
         else:
             t_p = self.head
             while t_p.next != None:
                 t_p = t_p.next
-            t_p.next = Node    
+            t_p.next = Node(value)
             
 
     def p(self):
         t_p = self.head
         while t_p != None:
-            print(t_p.value)
+            print("({})".format(t_p.value),end="")
             t_p = t_p.next
-            
+            if t_p != None:
+                print("->", end="")
+        print()
 
 if __name__ == "__main__":
-    n1 = Node(1)
-    n2 = Node(3)
-    n3 = Node(5)
+ 
     s = SingleLinkList()
-    s.add(n1)
-    s.add(n2)
-    s.add(n3)
+
+    L = ["ab", "bcc", "cdd", "dee", "eff"]
+
+    for i in L:
+        s.build(i)
+
     s.p()
