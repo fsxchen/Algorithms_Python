@@ -1,7 +1,7 @@
 #coding: utf-8
 
 """
-single link List
+single link List, and some base algorithms
 """
 
 class Node(object):
@@ -13,7 +13,7 @@ class SingleLinkList:
     def __init__(self) -> None:
         self.head = None
 
-    def build(self, value):
+    def append(self, value):
         if self.head == None:
             self.head = Node(value)
         else:
@@ -39,6 +39,6 @@ if __name__ == "__main__":
     L = ["ab", "bcc", "cdd", "dee", "eff"]
 
     for i in L:
-        s.build(i)
+        s.append(i)
 
     s.p()
