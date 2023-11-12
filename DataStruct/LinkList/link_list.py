@@ -9,7 +9,7 @@ class Node(object):
         self.value = value
         self.next = None
 
-class SingleLinkList:
+class SingleLinkedList:
     def __init__(self, head=None) -> None:
         self.head = head
 
@@ -66,9 +66,35 @@ class SingleLinkList:
             print("->", end="")
         print("|")
 
+
+class CircularLinkedList:
+    def __init__(self) -> None:
+        self.h_node = Node(-1)
+        # 循环链表，为空的是h_node
+        self.h_node.next = self.h_node
+        self.tail = None
+
+    def build_with_list(self, data: list):
+        cur = self.h_node
+        for value in data:
+            cur.next = Node(value)
+            cur = cur.next
+        self.tail = cur
+        cur.next = self.h_node
+
+    def print(self):
+        cur = self.h_node
+        while cur.next != self.h_node:
+            cur = cur.next
+            print("({})".format(cur.value),end="")
+            print("->", end="")
+        print("|")
+
+
+
 if __name__ == "__main__":
  
-    s = SingleLinkList()
+    s = SingleLinkedList()
 
     L = ["ab", "bcc", "cdd", "dee", "eff"]
 
@@ -78,5 +104,8 @@ if __name__ == "__main__":
     print(s.search("bcc"))
     s.delete("dee")
     s.delete("eff")
-
     s.print()
+
+    s2 = CircularLinkedList()
+    s2.build_with_list(L)
+    s2.print()
