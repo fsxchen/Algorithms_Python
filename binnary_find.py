@@ -18,3 +18,11 @@ def binnary_find(A: list, num: int):
         else:
             l = mid + 1
     return A[l] == num
+
+def main():
+    A = [1, 3, 5, 8, 12, 20, 36, 58, 99]
+    print(binnary_find(A, 5))
+
+if __name__ == "__main__":
+    main()
+
