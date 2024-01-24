@@ -10,32 +10,38 @@ sys.path.append(os.path.dirname(cur_dir))
 
 from link_list import *
 
-def solve(n=41):
-    """
-    默认是41个人
-    """
-    head = Node(0)
-    cur = head
-    for i in range(1, n + 1):
-        node = Node(i)
-        cur.next = node
-        cur = node
-    # 最后一个指向第一个结点
-    cur.next = head.next
-    return cur.next
+def solve(n, m):
+    circul = CircularLinkedList()
+    circul.build_with_list(range(1, n + 1))
+    circul.print()
+    cur = circul.h_node
+
+    # for i in range(1, n + 1):
+    #     node = Node(i)
+    #     cur.next = node
+    #     cur = node
+    # # 最后一个指向第一个结点
+    # cur.next = head.next
+    # return cur.next
+
+    while cur != cur.next:
+        for i in range(1, m):
+            print("...")
+            cur = cur.next
+        # 删除下一个的结点
+        print("kill %d" % cur.next.value)
+        # circul.delete()
+        del_node = cur.next
+        cur.next = del_node.next
+        del del_node
+        cur = cur.next
+    return cur
 
 if __name__ == "__main__":
-    l = solve(n, m)
-    m = 3
-    while l != l.next:
-        for i in range(1, m - 1):
-            l = l.next
-        # 删除下一个的结点
-        print("%d" % l.next.value, end="->")
+    n = 10
+    # m = 3
+    # l = solve(n, m)
+    # print("幸存者", l.value)
 
-        del_node = l.next
-        l.next = del_node.next
-        del del_node
-        l = l.next
-
-    print(l.value)
+    l = solve(n, 2)
+    print("幸存者", l.value)
